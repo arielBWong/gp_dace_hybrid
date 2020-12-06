@@ -1,4 +1,3 @@
-
 % ---demo test: forrestor
 function[] = processplot1d(fighn, trainx, trainy, krg, prob, initx, before, daceflag)
 

@@ -146,8 +146,8 @@ opts.MaxFunctionEvaluations = 100;
 [newx_local, newf, ~, output] = fmincon(funh_obj, newx, [], [], [], [],  ...
     bl, bu, [], opts);
 
-if newf <= fbest % local search got problem
-    newx = newx_local;
-end
+% if newf <= fbest % local search got problem
+%     newx = newx_local;
+% end
 
 end

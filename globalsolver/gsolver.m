@@ -26,12 +26,35 @@ bestx = NaN;
 bestf = NaN;
 bestc = NaN;
 
-% fighn = varargin{1};
-% trainy = varargin{2};
-% krg = varargin{3}; 
 
 % Initialization
 [pop,archive] = initialize_pop(funh_obj, funh_con, num_xvar, lb, ub, initmatrix, param);
+
+%%%%%%%%%%%%%%%%%%%%%
+if ~isempty(varargin)
+    f1 = figure(1);
+    lb1 = lb(1);
+    ub1 = ub(1);
+    
+    lb2 = lb(2);
+    ub2 = ub(2);
+    num_points = 101;
+    x1 = linspace(lb1, ub1, num_points);
+    x2 = linspace(lb2, ub2, num_points);
+    [x1, x2] = meshgrid(x1, x2);
+    testdata = zeros(num_points, num_points);
+    
+    for i = 1:num_points
+        for j = 1:num_points
+            [f(i, j), ~] = funh_obj([x1(i, j), x2(i, j)]);
+        end
+    end
+    surf(x1, x2, f); hold on;
+    colormap parula
+    shading interp
+    scatter3(pop.X(:, 1), pop.X(:, 2), pop.F, 50, 'filled', 'r');
+end
+%%%%%%%%%%%%%%%%%%%%
 
 gen=1;
 while gen<= param.gen
@@ -44,10 +67,26 @@ while gen<= param.gen
     % Reduce 2N to N
     [pop]=reduce_pop(pop,param.popsize);
     
-    % processplot_ea(fighn, pop.X, funh_obj, trainy, krg);
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    if ~isempty(varargin)
+        clf(f1);
+        surf(x1, x2, f); hold on;
+        colormap parula
+        shading interp
+        scatter3(pop.X(:, 1), pop.X(:, 2), pop.F, 50, 'filled', 'r');
+        pause(0.5);
+    end
+    %%%%%%%%%%%%%%%%%%%%%%%%
     gen = gen+1;
     % disp(gen);
 end
+
+
+
+if ~isempty(varargin)
+    close(f1);  
+end
+
 
 % use archive to save last pop_x
 archive.pop_last =pop;

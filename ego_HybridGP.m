@@ -45,19 +45,23 @@ end
 normhn = str2func(norm_str);
 mdl_save = cell(1, iter_size);
 fithn = str2func('EIM_eval');
+switchrecord = []; % 1- KB, 0 -EI
 
 for g = 1: iter_size   
      
     daceflag = false;
     [new_xl, infor] = Believer_next(train_xl, train_fl, upper_bound, lower_bound, ...
         num_pop, num_gen, train_fc, [], normhn, daceflag, prob);
+    
+    switchrecord(g) = 1;
  
     tooclose = archive_check(new_xl, train_xl, prob);
     if tooclose
         % ---- determine whether to switch to eim -----
-        % fprintf('adopt eim at iter: %d\n', g); 
+        fprintf('adopt eim at iter: %d\n', g); 
         [new_xl, infor] = switchEIM_gpr(train_xl, train_fl, upper_bound, lower_bound, ...
-            num_pop, num_gen, train_fc, fithn, normhn, infor.krg, infor.krgc);             
+            num_pop, num_gen, train_fc, fithn, normhn, infor.krg, infor.krgc);
+        switchrecord(g) = 0;
              
     end
     
@@ -87,7 +91,7 @@ for g = 1: iter_size
 end
 
 [match_xl, n_fev, flag] = post_infillsaveprocess(xu, train_xl, train_fl, train_fc, 'lladp_gp', seed, prob, init_size);
-save_eachmodel(seed, 'lladp_gp', mdl_save, init_size, prob);
+save_eachmodel(seed, 'lladp_gp', mdl_save, init_size, prob, switchrecord);
 end
 
 

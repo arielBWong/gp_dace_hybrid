@@ -3,8 +3,10 @@ problems ={'ackley(3, 3)', 'levy(3, 3)','rastrigin(3, 3)','dsm1(3, 3)', ... %  m
             'tp3(3, 3)', 'tp5(3, 3)', 'tp7(3, 3)','Shekel(3, 3)', ... % multimodal no global structure
             'Zakharov(3, 3)', 'smd2(3, 3)',  'rosenbrock(3, 3)'}; % unimodal
 % 'tp3(3, 3)', 'tp5(3, 3)', 'tp7(3, 3)','Shekel(3, 3)','rastrigin(3, 3)', 'rosenbrock(3, 3)', 'Zakharov(3, 3)', 'smd2(3, 3)'
-seeds = linspace(1, 1, 1);
-match_methods = {'ego_HybridGP'}; % 'ego_EI', 'ego_Believer', 'ego_BelieverGP', 'ego_EIgp'
+
+problems = {'ackley(3, 3)', 'Zakharov(3, 3)', 'Shekel(3, 3)' ,  'rosenbrock(3, 3)'};
+seeds = linspace(12, 21, 10);
+match_methods = {'ego_bumpfindingGP3'}; % 'ego_EI', 'ego_Believer', 'ego_BelieverGP', 'ego_EIgp'
 
 
 np = length(problems);  

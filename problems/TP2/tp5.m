@@ -67,6 +67,27 @@ classdef tp5
            
             %-con
             c = [];
-         end
+        end
+          function plot2d_lower(obj)
+            figure(1);
+            xu = [];
+            m = 101;
+            xu1 = linspace(obj.xl_bl(1), obj.xl_bu(1), m);
+            xu2 = linspace(obj.xl_bl(2), obj.xl_bu(2), m);
+            [xu1, xu2] = meshgrid(xu1, xu2);
+            f = zeros(m, m);
+            for i = 1:m
+                for j = 1:m
+                    xl = [xu1(i, j), xu2(i,j)];
+                    f(i, j) = obj.evaluate_l(xu, xl);
+                end
+            end
+            surfc(xu1, xu2, f);hold on;
+            colormap jet
+            shading interp
+            title('real landscape');
+            xlabel('xl1','FontSize', 16);
+            ylabel('xl2', 'FontSize', 16);
+        end
     end
 end
