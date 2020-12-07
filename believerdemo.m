@@ -13,7 +13,7 @@ prob = 'Shekel_curve()';
 % rng(1, 'twister');
 % prob =  'rosenbrock(2, 2)';
 % [match_xl, n_fev, flag] = ego_bumpfindingGP3([0, 0], prob,1);
-[match_xl, n_fev, flag] = ego_trustregiontest([0, 0], prob,1);
+% [match_xl, n_fev, flag] = ego_trustregiontest([0, 0], prob,1);
 % [match_xl, n_fev, flag] = ego_BelieverGP([0, 0], prob, 1);
 % [match_xl, n_fev, flag] = ego_Believer([0, 0], prob, 1);
 % [match_xl, n_fev, flag] = ego_EI([0, 0], prob, 1);

@@ -3,7 +3,7 @@ function  lowersave(x, f, c, prob, seed, method,  varargin)
 % can deal with SO and MO
 %---------------------------
 num = length(prob.xl_bl);
-savepath = strcat(pwd, '\resultfolder_gp3bh\', prob.name, '_', num2str(num) ,'_',method);
+savepath = strcat(pwd, '\resultfolder_gp\', prob.name, '_', num2str(num) ,'_',method);
 % savepath = strcat(pwd, '\resultfolder_gp\', prob.name, '_', num2str(num) ,'_',method);
 % savepath = strcat(pwd, '\result_folder\', prob.name, '_',method);
 if ~isempty( varargin)

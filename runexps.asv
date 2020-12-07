@@ -4,8 +4,8 @@ problems ={'ackley(3, 3)', 'levy(3, 3)','rastrigin(3, 3)','dsm1(3, 3)', ... %  m
             'Zakharov(3, 3)', 'smd2(3, 3)',  'rosenbrock(3, 3)'}; % unimodal
 
 
-problems = {'smd1(3, 3)', 'smd3(3, 3)', 'smd4(3, 3)' ,  'tp6(3, 3)', 'tp9(3, 3)'};
-seeds = linspace(1, 11, 11);
+problems = {'smd1(2, 3)', 'smd3(2, 3)', 'smd4(2, 3)' ,  'rosenbrock(3, 3)'};
+seeds = linspace(1, 21, 21);
 match_methods = {'ego_bumpfindingGP3',  'ego_BelieverGP', 'ego_EIgp'}; % 'ego_EI', 'ego_Believer', 'ego_BelieverGP', 'ego_EIgp'
 
 

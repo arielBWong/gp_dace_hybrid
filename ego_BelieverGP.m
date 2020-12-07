@@ -68,7 +68,7 @@ for g = 1: iter_size
     check = abs(train_xl - new_xl);
     check = round(check, 5);
     if length(unique(check, 'rows')) < size(train_xl, 1)
-        fprintf('fail unique check');
+        fprintf('fail unique check\n');
         % continue;
     end
     

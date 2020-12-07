@@ -120,8 +120,8 @@ for g = 1: iter_size
             % run local search
             [localx, localy] = pickup_localxy(upper_bound, lower_bound, trainx_all, trainy_all);
             kk = size(localx, 1);
-            fprintf('Local training data size %d \n', kk);
-            fprintf('Archive min is %f \n', miny);
+            % fprintf('Local training data size %d \n', kk);
+            % fprintf('Archive min is %f \n', miny);
             
             % build local surrogate
             [local_krg, local_krgc] =  surrogate_create(localx, localy, [] , normhn, daceflag);

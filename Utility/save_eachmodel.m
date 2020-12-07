@@ -1,7 +1,7 @@
-function save_eachmodel(seed, method, mdl_save, init_size, prob, switchrecord)
+function save_eachmodel(seed, method, mdl_save, init_size, prob,varargin)
 
 num = length(prob.xl_bl);
-savepath = strcat(pwd, '\resultfolder_gp3bh\', prob.name, '_', num2str(num) ,'_',method);
+savepath = strcat(pwd, '\resultfolder_gp\', prob.name, '_', num2str(num) ,'_',method);
 savepath = strcat(savepath, '_init_', num2str(init_size), '_modelsave');
 
 n = exist(savepath);
@@ -25,9 +25,12 @@ save(savename, 'mdl');
 end
 
 % record swing between KB and EI
-switchrecord = switchrecord';
-savename = strcat(savepath, '\switch_seed_', num2str(seed), '.csv');
-csvwrite(savename, switchrecord);
+if ~isempty(varargin)
+    switchrecord = varargin{1};
+    switchrecord = switchrecord';
+    savename = strcat(savepath, '\switch_seed_', num2str(seed), '.csv');
+    csvwrite(savename, switchrecord);
+end
 
 
 
