@@ -1,12 +1,12 @@
 seedmax = 21;
 median_num = 11;
-problems ={'ackley(3, 3)', 'levy(3, 3)','rastrigin(3, 3)','dsm1(3, 3)', ... %  multimodal global structure  heavy modality and weak modality
-            'tp3(3, 3)', 'tp5(3, 3)', 'tp7(3, 3)','Shekel(3, 3)',       ... % multimodal no global structure
-            'Zakharov(3, 3)', 'smd2(3, 3)', }; % 'rosenbrock(3, 3)'
+
 problems = {'ackley(3, 3)', 'levy(3, 3)','rastrigin(3, 3)','dsm1(3, 3)', ... %  multimodal global structure  heavy modality and weak modality
             'tp3(3, 3)', 'tp5(3, 3)', 'tp7(3, 3)','Shekel(3, 3)', ... % multimodal no global structure
-            'Zakharov(3, 3)', 'smd2(3, 3)',  'rosenbrock(3, 3)'};
-algos = { 'llble_gp', 'lleim_gp','lladp_bh'}; % , 'lleim_gp', 'lladp_gp'
+            'Zakharov(3, 3)', 'smd2(3, 3)',  'rosenbrock(3, 3)',...
+            'smd1(3, 3)', 'smd3(3, 3)', 'smd4(3, 3)' ,  'tp6(3, 3)', 'tp9(3, 3)'};
+        
+algos = { 'llble_gp', 'lleim_gp','lladp_bh4'}; % , 'lleim_gp', 'lladp_gp'
 legs = {'BLE', 'EIM', 'BHEIM'};
 colors = {'b', 'r', 'k'};
 legend_algos = {'BLE', 'EIM', 'BHEIM'};

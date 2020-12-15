@@ -1,12 +1,13 @@
 %%
 problems ={'ackley(3, 3)', 'levy(3, 3)','rastrigin(3, 3)','dsm1(3, 3)', ... %  multimodal global structure  heavy modality and weak modality
             'tp3(3, 3)', 'tp5(3, 3)', 'tp7(3, 3)','Shekel(3, 3)', ... % multimodal no global structure
-            'Zakharov(3, 3)', 'smd2(3, 3)',  'rosenbrock(3, 3)'}; % unimodal
+            'Zakharov(3, 3)', 'smd2(3, 3)',  'rosenbrock(3, 3)', ... % unimodal
+            'smd1(3, 3)', 'smd3(3, 3)', 'smd4(3, 3)' ,  'tp6(3, 3)', 'tp9(3, 3)'};
 
 
-problems = {'smd1(3, 3)', 'smd3(3, 3)', 'smd4(3, 3)' ,  'tp6(3, 3)', 'tp9(3, 3)'};
-seeds = linspace(1, 11, 11);
-match_methods = {'ego_bumpfindingGP3',  'ego_BelieverGP', 'ego_EIgp'}; % 'ego_EI', 'ego_Believer', 'ego_BelieverGP', 'ego_EIgp'
+% problems = {'smd1(3, 3)', 'smd3(3, 3)', 'smd4(3, 3)' ,  'tp6(3, 3)', 'tp9(3, 3)'};
+seeds = linspace(1, 21, 21);
+match_methods = {'ego_bumpfindingGP4'}; % 'ego_EI', 'ego_Believer', 'ego_BelieverGP', 'ego_EIgp', 
 
 
 np = length(problems);  
