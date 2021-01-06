@@ -1,0 +1,16 @@
+How to generate
+
+Figure1 comparison of KB and EI behaviour
+Plot data is generated from running script: believerdemo.m -->[match_xl, n_fev, flag] = ego_BelieverGP([0, 0], prob, 1); 
+													       -->[match_xl, n_fev, flag] = ego_EIgp([0, 0], prob, 1); 														   
+For paper plots, data is placed in 4 folders -- kb_ras1
+												kb_ras2
+												kb_she1
+												kb_she1
+												ei_ras1
+												ei_ras2
+												ei_she1
+												ei_she2
+				 plot generation scripts    --- Plotformatlab.py
+												
+
