@@ -46,22 +46,8 @@ for ii = 1: np
             
             if kk == 3  % BHEI
                 % adjust fl
-                fl_local = fl(173 : end);
-                localindex = 1;
+                fl_part = fl
                 
-                fl_part = fl(1: ninit)';
-                for nn = ninit + 1 : ninit + 140
-                    fl_part = [fl_part, fl(nn)];
-                    g = nn - ninit;
-                    if mod(g, 5) == 0
-                        fl_part = [fl_part, fl_local(localindex)];
-                        localindex = localindex + 1;
-                    end
-                end
-                fl_part = [fl_part, fl(end)];
-                
-                fl = fl_part;
-                fl_part = [];
             end
             
             % min f so far
@@ -96,14 +82,14 @@ for ii = 1: np
         fill(x, y, colors{kk}, 'FaceAlpha', 0.1, 'EdgeColor','none');
         
     end
-    % title(prob.name, 'FontSize', 16);
-    legend(legs{1}, strcat(legs{1}, ' std'),  legs{2}, strcat(legs{2}, ' std'), legs{3}, strcat(legs{3}, ' std'),  'FontSize', 20);
+    title(prob.name, 'FontSize', 16);
+    legend(legs{1}, strcat(legs{1}, ' std'),  legs{2}, strcat(legs{2}, ' std'), legs{3}, strcat(legs{3}, ' std'),  'FontSize', 14);
     
     hLegend = findobj(gcf, 'Type', 'Legend');
     set(hLegend, 'FontName', 'Times New Roman')
     
-    xlabel('Iterations', 'FontSize', 20)
-    ylabel('F',  'FontSize', 20);
+    xlabel('Iterations', 'FontSize', 16)
+    ylabel('F',  'FontSize', 16);
     
     ylh = get(gca,'ylabel');
     set(ylh, 'Rotation',0, 'FontName', 'Times New Roman');
@@ -114,11 +100,6 @@ for ii = 1: np
     
     tlh = get(gca,'title');
     set(tlh, 'FontName', 'Times New Roman');
- 
-    
-    % xtk = get(gca,'XTickLabel');
-    % set(gca,'XTickLabel',xtk,'fontsize',12);
-    
     % save to plot folder   
     savename = strcat(plotpath, '\', prob.name,'_', num2str(nvar), '_converge.fig');
     saveas(figure(ii), savename);
