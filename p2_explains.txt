@@ -12,5 +12,16 @@ For paper plots, data is placed in 4 folders -- kb_ras1
 												ei_she1
 												ei_she2
 				 plot generation scripts    --- Plotformatlab.py
+
+How to generate figure 4 convergence figure 
+
+Run script EGO_outputcompare, results are saved in \plots
+
+How to generate significant test results:
+
+Run script EGO_outputsig, generate 3 csv files in \plots  -- median_sigEI2BH
+						          -- median_signKB2BH
+							  -- median_sigKB2EI
+
 												
 
